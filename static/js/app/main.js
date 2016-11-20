@@ -9,6 +9,7 @@
 
 //define(['jquery', 'app'], function($, App) {
   // define(['jquery'], function($, require) {
+// define(['app/listeners'], function(listeners) {
 define(function(require) {
 
   // Toji's game-shim module is included with this template; if you wish to use
@@ -32,6 +33,8 @@ define(function(require) {
 
   var initApp = function() {
     $(document).ready(function() {
+      //console.log("PRINT A");
+
       setUpListeners();
       setStartScreen();
 
@@ -39,7 +42,11 @@ define(function(require) {
   };
 
   var setUpListeners = function() {
-    //
+    
+    var listeners = require('app/listeners');
+    
+    listeners.doThing();
+    listeners.loadListeners();
   };
 
   var setStartScreen = function() {
