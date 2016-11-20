@@ -32,20 +32,42 @@ define(function(require) {
 
   var initApp = function() {
     $(document).ready(function() {
-
-      var canvas = document.getElementById("canvas");
-
-      var ctxt = canvas.getContext("2d");
-
-      var grass = new Image();
-      grass.src = "img/tile_grass.png";
-
-      var sky = new Image();
-      sky.src = "img/sepia_sky.png";
-
-      ctxt.drawImage(sky, 0, 0, 980, 502);
+      setUpListeners();
+      setStartScreen();
 
     });
+  };
+
+  var setUpListeners = function() {
+    //
+  };
+
+  var setStartScreen = function() {
+    var canvas = document.getElementById("canvas");
+
+    var ctxt = canvas.getContext("2d");
+
+    var grass = new Image();
+    grass.src = "img/tile_grass.png";
+
+    var sky = new Image();
+    sky.src = "img/sepia_sky.png";
+
+    ctxt.drawImage(sky, 0, 0, 980, 502);
+  };
+
+  var setPlayScreen = function() {
+    var canvas = document.getElementById("canvas");
+
+    var ctxt = canvas.getContext("2d");
+
+    var grass = new Image();
+    grass.src = "img/tile_grass.png";
+
+    var sky = new Image();
+    sky.src = "img/sepia_sky.png";
+
+    ctxt.drawImage(sky, 0, 0, 980, 502);
   };
 
   initApp();
