@@ -6,6 +6,9 @@
 //
 //
 //
+
+//define(['jquery', 'app'], function($, App) {
+  // define(['jquery'], function($, require) {
 define(function(require) {
 
   // Toji's game-shim module is included with this template; if you wish to use
@@ -18,5 +21,32 @@ define(function(require) {
   // We suggest reviewing the code (in lib/game-shim.js) before enabling it.
   //
   //require('game-shim');
-  
+
+
+
+  // var canvas = document.getElementById("canvas");
+
+  // var ctxt = canvas.getContext("2d");
+
+
+
+  var initApp = function() {
+    $(document).ready(function() {
+
+      var canvas = document.getElementById("canvas");
+
+      var ctxt = canvas.getContext("2d");
+
+      var grass = new Image();
+      grass.src = "img/tile_grass.png";
+
+      var sky = new Image();
+      sky.src = "img/sepia_sky.png";
+
+      ctxt.drawImage(sky, 0, 0, 980, 502);
+
+    });
+  };
+
+  initApp();
 });
