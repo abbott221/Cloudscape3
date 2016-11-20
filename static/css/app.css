@@ -1,0 +1,14 @@
+/*canvasHolder {
+	height: 980px;
+	width: 502px;
+}*/
+#canvasHolder {
+	text-align:center;
+	width: 100%;
+	margin: auto;
+}
+#canvas {
+	margin: auto;
+	border: 1px solid black;
+	display: inline;
+}
