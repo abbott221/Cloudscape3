@@ -23,9 +23,16 @@ define(function() {
       console.log("PRINT B");
     },
 
+    setVars: function() {
+      this.displaceX = 150;
+      this.displaceY = 150;
+      this.clickThreshold = 20;
+    },
+
     loadListeners: function() {
+      
       document.getElementById("canvas").addEventListener("mousedown", function(event) {
-        console.log("ON MOUSE DOWN");
+        // console.log("ON MOUSE DOWN");
 
         //set drag mode on
 
@@ -34,13 +41,29 @@ define(function() {
 
         this.startX = event.clientX;
         this.startY = event.clientY;
+
+        // this.displaceX = 150;
+        // this.displaceY = 150;
+        // this.clickThreshold = 20;
+        if (!this.displaceX) {
+          this.displaceX = 150;
+        }
+        if (!this.displaceY) {
+          this.displaceY = 150;
+        }
+        if (!this.clickThreshold) {
+          this.clickThreshold = 20;
+        }
       });
 
       document.getElementById("canvas").addEventListener("mousemove", function(event) {
         console.log("ON MOUSE MOVE");
 
+        // console.log(this.dragX*this.dragX + this.dragY*this.dragY);
+        // console.log(this.clickThreshold*this.clickThreshold);
         if (this.dragX*this.dragX + this.dragY*this.dragY > this.clickThreshold*this.clickThreshold) {
           this.clickAction = false;
+          // console.log("FLIPPED");
         }
 
         if (this.holdingDown) {
@@ -59,28 +82,47 @@ define(function() {
 
         console.log("Change X: " + this.dragX);
         console.log("Change Y: " + this.dragY);
+        console.log(this.displaceX);
+        console.log(this.displaceY);
 
 
 
         if ( !this.clickAction ) {
           this.displaceX += this.dragX;
           this.displaceY += this.dragY;
+          console.log("NOT CLICK");
+          console.log(this.displaceX);
+          console.log(this.displaceY);
+
+          // console.log(this.getDisplaceX());
+          // console.log(this.getDisplaceY());
         }
 
 
         if (this.clickAction) {
+          console.log("IS CLICK");
           //change active/selected tile
           //this.handleClick(event.clientX, event.clientY);
           this.propogateClick = true;
           this.clickX = event.clientX;
           this.clickY = event.clientY;
+
+          // this.clickAction = true;
         }
 
         this.dragX = 0;
         this.dragY = 0;
       });
 
-      console.log("PRINT C");
+      // console.log("PRINT C");
+    },
+
+    getDisplaceX: function() {
+      return this.displaceX;
+    },
+
+    getDisplaceY: function() {
+      return this.displaceY;
     }
 
     // handleClick: function(x, y) {
