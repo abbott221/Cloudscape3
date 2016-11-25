@@ -45,12 +45,9 @@ define(function(require) {
 
   var initApp = function() {
     $(document).ready(function() {
-      //console.log("PRINT A");
+      
+      //set up calls can go here
 
-      setUpListeners();
-
-      setStartScreen();
-      // setInterval( render, 30 );
       setInterval( tick, 30 );
 
     });
@@ -60,42 +57,13 @@ define(function(require) {
     drawStartScreen();
   };
 
-  var setUpListeners = function() {
-    
-    // var listeners = require('app/listeners');
-    
-    // listener.init();
-
-    doThing();
-    // listeners.setVars();
-    // listeners.loadListeners();
-  };
-
-  var setStartScreen = function() {
-    // var canvas = document.getElementById("canvas");
-
-    // var ctxt = canvas.getContext("2d");
-
-    // var grass = new Image();
-    // grass.src = "img/tile_grass.png";
-
-    // var sky = new Image();
-    // sky.src = "img/sepia_sky.png";
-
-    ctxt.drawImage(sky, 0, 0, 980, 502);
-  };
-
   var drawStartScreen = function() {
     // var listeners = require('app/listeners');
 
     ctxt.drawImage(sky, 0, 0, 980, 502);
     var dX = getDisplaceX();
     var dY = getDisplaceY();
-    // var dX = listener.displaceX;
-    // var dY = listener.displaceY;
-    // console.log(dX + " " + dY);
-    // listeners.doThing();
-    // ctxt.drawImage(grass, 0, 0, dX, dY);
+    
     ctxt.drawImage(grass, dX, dY, 50, 50);
   };
 
