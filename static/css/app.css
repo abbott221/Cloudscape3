@@ -12,3 +12,12 @@
 	border: 1px solid black;
 	display: inline;
 }
+
+#proceed-btn {
+	top: 50px;
+	left: 50px;
+
+	position: absolute;
+	text-align: center;
+	z-index: 5;
+}

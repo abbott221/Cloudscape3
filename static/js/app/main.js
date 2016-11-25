@@ -63,7 +63,7 @@ define(function(require) {
     ctxt.drawImage(sky, 0, 0, 980, 502);
     var dX = getDisplaceX();
     var dY = getDisplaceY();
-    
+
     ctxt.drawImage(grass, dX, dY, 50, 50);
   };
 
@@ -80,6 +80,9 @@ define(function(require) {
 
     ctxt.drawImage(sky, 0, 0, 980, 502);
   };
+
+
+  
 
   initApp();
 });
