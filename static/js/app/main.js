@@ -62,11 +62,13 @@ define(function(require) {
 
   var setUpListeners = function() {
     
-    var listeners = require('app/listeners');
+    // var listeners = require('app/listeners');
     
-    listeners.doThing();
-    listeners.setVars();
-    listeners.loadListeners();
+    // listener.init();
+
+    doThing();
+    // listeners.setVars();
+    // listeners.loadListeners();
   };
 
   var setStartScreen = function() {
@@ -84,14 +86,15 @@ define(function(require) {
   };
 
   var drawStartScreen = function() {
-    var listeners = require('app/listeners');
+    // var listeners = require('app/listeners');
 
     ctxt.drawImage(sky, 0, 0, 980, 502);
-    // var dX = listeners.getDisplaceX();
-    // var dY = listeners.getDisplaceY();
-    var dX = listeners.displaceX;
-    var dY = listeners.displaceY;
+    var dX = getDisplaceX();
+    var dY = getDisplaceY();
+    // var dX = listener.displaceX;
+    // var dY = listener.displaceY;
     // console.log(dX + " " + dY);
+    // listeners.doThing();
     // ctxt.drawImage(grass, 0, 0, dX, dY);
     ctxt.drawImage(grass, dX, dY, 50, 50);
   };
